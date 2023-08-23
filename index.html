@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cotizar Criptomonedas</title>
+    <link rel="stylesheet" href="css/noramlize.css" />
+    <link rel="stylesheet" href="css/skeleton.css" />
+    <link
+      rel="stylesheet icon"
+      type="image/png"
+      href="img/calculadora-de-moneda.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="one-half column">
+          <img src="img/cryptomonedas.png" />
+        </div>
+        <div class="one-half column">
+          <form id="form">
+            <div class="row">
+              <label>Select your currency</label>
+              <select class="u-full-width" id="currency" name="currency">
+                <option value="">----Select Currency----</option>
+                <option value="USD">United States</option>
+                <option value="DOP">Dominican Republic</option>
+                <option value="EUR">Europa</option>
+                <option value="AUD">Australia</option>
+                <option value="HNL">Honduras</option>
+                <option value="GTQ">Guatemala</option>
+                <option value="JPY">Japón</option>
+                <option value="MXN">México</option>
+                <option value="PAB">Panamá</option>
+                <option value="PEN">Perú</option>
+                <option value="PYG">Paraguay</option>
+                <option value="COP">Colombia</option>
+                <option value="CLP">Chile</option>
+                <option value="CRC">Costa Rica</option>
+                <option value="BOB">Bolivia</option>
+              </select>
+            </div>
+
+            <div class="row">
+              <div>
+                <label>Select your cryptocurrency</label>
+                <select
+                  class="u-full-width"
+                  id="cryptocurrency"
+                  name="cryptocurrency"
+                >
+                  <option value="">----Select Cryptocurrency----</option>
+                </select>
+              </div>
+            </div>
+            <div id="exit"></div>
+            <button class="button-primary u-full-width" type="submit">
+              Quotation
+              <i class="fa-solid fa-coins"></i>
+            </button>
+
+            <div class="results">
+              <h2 class="title-table">
+                Cryptocurrency status of the selected country
+              </h2>
+              <table class="container-table">
+                <tr class="list-table">
+                  <th>PRICE</th>
+                  <th>HIGH DAY</th>
+                  <th>LOW DAY</th>
+                  <th>CHANGE PCT DAY</th>
+                  <th>LAST UPDATE</th>
+                </tr>
+                <tr class="list-table" id="list-table"></tr>
+              </table>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/21d7aae8c4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/app.js" type="module"></script>
+  </body>
+</html>
