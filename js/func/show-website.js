@@ -1,10 +1,21 @@
 import { $showWebsite } from "../const.js";
 import { cleanWebsite } from "./clean-web.js";
+import { showAlert } from "./show-alert.js";
 import { showSpinner } from "./spinner.js";
 
-export const showCryptoWebsite = (crypto) => {
+export const showCryptoWebsite = crypto => {
   cleanWebsite($showWebsite);
   const { PRICE, HIGHDAY, LOWDAY, CHANGEPCTDAY, LASTUPDATE } = crypto;
+
+  if (
+    PRICE === undefined ||
+    LOWDAY === undefined ||
+    CHANGEPCTDAY === undefined ||
+    LASTUPDATE === undefined
+  ) {
+    showAlert("There is no data for this coin");
+    return;
+  }
 
   setTimeout(() => {
     $showWebsite.innerHTML += `

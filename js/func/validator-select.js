@@ -3,7 +3,7 @@ import { showAlert } from "../func/show-alert.js";
 import { getConsultCrypto } from "../API/fetch.js";
 import { buttonDisable } from "./button-disable.js";
 
-export const validatorSelect = (e) => {
+export const validatorSelect = e => {
   e.preventDefault();
 
   const { currency, cryptocurrency } = fillObjectCrypto;

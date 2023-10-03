@@ -1,9 +1,10 @@
 import { fillObjectCrypto } from "../func/fill-object.js";
+import { showAlert } from "../func/show-alert.js";
 import { showSelect } from "../func/show-select.js";
 import { showCryptoWebsite } from "../func/show-website.js";
 //Create Promise.
-const getConsult = (crypto) =>
-  new Promise((resolve) => {
+const getConsult = crypto =>
+  new Promise(resolve => {
     resolve(crypto);
   });
 
@@ -12,9 +13,9 @@ export const getTopCrypto = () => {
     "https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD";
 
   fetch(URL)
-    .then((response) => response.json())
-    .then((data) => getConsult(data.Data))
-    .then((crypto) => showSelect(crypto));
+    .then(response => response.json())
+    .then(data => getConsult(data.Data))
+    .then(crypto => showSelect(crypto));
 };
 
 export const getConsultCrypto = () => {
@@ -23,6 +24,9 @@ export const getConsultCrypto = () => {
   const URL = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cryptocurrency}&tsyms=${currency}`;
 
   fetch(URL)
-    .then((response) => response.json())
-    .then((data) => showCryptoWebsite(data.DISPLAY[cryptocurrency][currency]));
+    .then(response => response.json())
+    .then(data => showCryptoWebsite(data.DISPLAY[cryptocurrency][currency]))
+    .catch(error =>
+      showAlert(` ${(error = "Information not found with this coin")}`)
+    );
 };
