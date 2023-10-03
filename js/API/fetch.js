@@ -29,7 +29,7 @@ export const getConsultCrypto = () => {
     .then(response => response.json())
     .then(data => showCryptoWebsite(data.DISPLAY[cryptocurrency][currency]))
     .catch(error => {
-      showAlert(` ${(error = "Infomración no encontrada con esta moneda")}`);
+      showAlert(` ${(error = "Information not found with this coin")}`);
       cleanWebsite($showWebsite);
     });
 };
