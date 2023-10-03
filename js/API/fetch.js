@@ -1,3 +1,5 @@
+import { $showWebsite } from "../const.js";
+import { cleanWebsite } from "../func/clean-web.js";
 import { fillObjectCrypto } from "../func/fill-object.js";
 import { showAlert } from "../func/show-alert.js";
 import { showSelect } from "../func/show-select.js";
@@ -26,7 +28,8 @@ export const getConsultCrypto = () => {
   fetch(URL)
     .then(response => response.json())
     .then(data => showCryptoWebsite(data.DISPLAY[cryptocurrency][currency]))
-    .catch(error =>
-      showAlert(` ${(error = "Information not found with this coin")}`)
-    );
+    .catch(error => {
+      showAlert(` ${(error = "Infomración no encontrada con esta moneda")}`);
+      cleanWebsite($showWebsite);
+    });
 };

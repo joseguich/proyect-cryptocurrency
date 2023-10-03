@@ -12,10 +12,5 @@ export const getChangeSelect = e => {
     return;
   }
 
-  if (e.target.value === "undefined") {
-    showAlert("Información no en contrada");
-    return;
-  }
-
   fillObjectCrypto[e.target.name] = e.target.value;
 };
